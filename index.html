@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anchor</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+  <h1>CSS Anchor Positioning</h1>
+  <p>Демо-проект. Выполнил: Кузнецов Данила.</p>
+  <h2>1. Тултип на :hover</h2>
+  <p>Кнопка — якорь (<code>anchor-name</code>). Тултип позиционируется через <code>anchor()</code>.</p>
+  
+  <div class="demo">
+    <button class="btn-tip">Наведи на меня</button>
+    <div class="tooltip">Это тултип — без JS!</div>
+  </div>
+  
+  <h2>2. Popover + Anchor</h2>
+  <p>Нативный HTML-атрибут <code>popover</code> открывает панель по клику. CSS якорь ставит её под кнопкой.</p>
+  
+  <div class="demo">
+    <button class="btn-pop" popovertarget="my-popover">Нажми меня</button>
+    
+    <div id="my-popover" popover>
+      <strong>Popover без JavaScript</strong><br>
+      Атрибуты <code>popover</code> и <code>popovertarget</code> — встроены в HTML. Позиция — через CSS Anchor.
+    </div>
+  </div>
+  <h2>3. @position-try — автофлип</h2>
+  <p>Если подписи не влезают с нужной стороны — браузер сам переключает позицию. Сузь окно.</p>
+  
+  <div class="demo">
+    <div class="d3-wrap">
+      <button class="btn-left">Якорь A</button>
+      <button class="btn-right">Якорь B</button>
+    
+    </div>
+    <div class="label-l">← слева от A</div>
+    <div class="label-r">справа от B →</div>
+    <p class="d3-note">Сузь окно браузера — подписи флипнут на другую сторону</p>
+  </div>
+</body>
+</html>

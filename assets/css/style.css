@@ -1,0 +1,154 @@
+body {
+  font-family: sans-serif;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+  color: #222;
+}
+
+h1 { font-size: 1.6rem; margin-bottom: 8px; }
+h2 { font-size: 1.1rem; margin: 40px 0 6px; border-bottom: 2px solid #222; padding-bottom: 4px; }
+p  { color: #555; font-size: .9rem; margin-bottom: 16px; }
+
+.demo {
+  background: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 24px;
+  position: relative;
+  min-height: 100px;
+}
+
+pre {
+  background: #1e1e1e;
+  color: #d4d4d4;
+  border-radius: 6px;
+  padding: 14px 16px;
+  font-size: .8rem;
+  overflow-x: auto;
+  margin-top: 12px;
+  line-height: 1.6;
+}
+
+button {
+  padding: 8px 16px;
+  font-size: .9rem;
+  cursor: default;
+  border-radius: 4px;
+  border: 1px solid #999;
+  background: #fff;
+}
+
+
+.btn-tip {
+  anchor-name: --btn;
+  display: block;
+  margin: 0 auto;
+}
+
+.tooltip {
+  position: absolute;
+  position-anchor: --btn;
+  top: calc(anchor(bottom) + 8px);
+  left: anchor(center);
+  translate: -50% 0;
+
+  background: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: .8rem;
+  white-space: nowrap;
+
+  opacity: 0;
+  transition: opacity .2s;
+  pointer-events: none;
+}
+
+.btn-tip:hover ~ .tooltip {
+  opacity: 1;
+}
+
+
+.btn-pop {
+  anchor-name: --pop-btn;
+  display: block;
+  margin: 0 auto;
+}
+
+#my-popover {
+  position: absolute;
+  inset: unset;
+  position-anchor: --pop-btn;
+  top: calc(anchor(bottom) + 8px);
+  left: anchor(center);
+  translate: -50% 0;
+
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 12px 16px;
+  background: #fff;
+  font-size: .85rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,.1);
+  max-width: 220px;
+  margin: 0;
+}
+
+
+.d3-wrap {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0 40px;
+}
+
+.btn-left  { anchor-name: --bl; }
+.btn-right { anchor-name: --br; }
+
+@position-try --flip-right {
+  left:  calc(anchor(right) + 8px);
+  right: unset;
+}
+
+@position-try --flip-left {
+  right: calc(anchor(left) - 8px);
+  left:  unset;
+}
+
+.label-l {
+  position: absolute;
+  position-anchor: --bl;
+  right: calc(anchor(left) - 8px);
+  top: anchor(center);
+  translate: 0 -50%;
+  position-try-fallbacks: --flip-right;
+
+  background: #fff;
+  border: 1px solid #999;
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: .8rem;
+  white-space: nowrap;
+}
+
+.label-r {
+  position: absolute;
+  position-anchor: --br;
+  left: calc(anchor(right) + 8px);
+  top: anchor(center);
+  translate: 0 -50%;
+  position-try-fallbacks: --flip-left;
+
+  background: #fff;
+  border: 1px solid #999;
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: .8rem;
+  white-space: nowrap;
+}
+
+.d3-note {
+  font-size: .78rem;
+  color: #888;
+  text-align: center;
+  margin-top: -28px;
+}
